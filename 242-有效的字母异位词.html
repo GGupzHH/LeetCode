@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+/* 
+  5.01%
+  9.47%
+*/
+var isAnagram = function(s, t) {
+  if (s.length !== t.length) return false
+  
+  for (let i = 0; i < s.length; i++) {
+    if (t.indexOf(s[i]) > -1) {
+      t = t.replace(s[i], '')
+    } else {
+      return false
+    }
+  }
+  return t.length === 0
+};
+
+
+/* 
+  91.80%
+  77.49%
+*/
+// 用ASCII码 去把小写字母的位置分别按照先后存入数组 之后遍历其中一个string 个数做累加 另一个做递减
+var isAnagram = function(s, t) {
+  if(s.length !== t.length) return false
+
+  const hashAry = new Array(26).fill(0)
+
+  const base = 'a'.charCodeAt()
+
+  for (let i = 0; i < s.length; i++) {
+    hashAry[s[i].charCodeAt() - base]++
+  }
+
+  for (let i = 0; i < t.length; i++) {
+    if (!hashAry[t[i].charCodeAt() - base]) return false
+    hashAry[t[i].charCodeAt() - base]--
+  }
+
+  return true
+};
+
+
+isAnagram('anagram', 'nagaram')
+</script>
+</body>
+</html>
