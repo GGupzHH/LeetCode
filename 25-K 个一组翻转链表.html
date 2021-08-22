@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+const reverse = (start, tail) => {
+  let prev = null
+  let curr = start
+  while (curr != tail) {
+    next = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next
+  }
+  start.next = curr
+  return prev
+}
+
+var reverseKGroup = function(head, k) {
+
+  let start = head,end = head
+  for (let i = 0; i < k; i++) {
+    if (end == null) {
+      return group
+    }
+    end = end.next
+  }
+  reverse(start, end)
+  reverseKGroup(end, k)
+  return group
+};
+
+let group = {
+  value: 1,
+  next: {
+    value:2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: {
+          value: 5,
+          next: null
+        }
+      }
+    }
+  }
+}
+
+reverseKGroup(group, 2)
+</script>
+</body>
+</html>
