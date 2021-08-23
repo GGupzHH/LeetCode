@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+// 空间复杂度 因为在一个数组之内操作 两两交换  所以是 O(1)
+// 时间复杂度 
+// 特定已经排好序的 O(n)
+// 杂乱无章的O(n方)
+// 倒序(每次都需要对比排序)的O(n方)
+let arr = [1, 4, 6, 3, 7, 2]
+
+function insertionSort (arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let curr = arr[i]
+    for (let j = i - 1; j >= 0 && curr < arr[j]; j--) {
+      let middle = arr[j]
+      arr[j] = curr
+      arr[j + 1] = middle
+    }
+  }
+  return arr
+}
+
+insertionSort(arr)
+
+
+</script>  
+</body>
+</html>
