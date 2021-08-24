@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  归并排序
+  空间复杂度O(n)
+  时间复杂度O(nlogn)
+  <script>
+    let arr = [8, 6, 2, 5, 9, 4, 3, 1, 7]
+
+    function merge (arr) {
+      const len = arr.length
+
+      if (len < 2) {
+        return arr
+      }
+
+      let leftArr = merge(arr.splice(0, len / 2))
+      let rightArr = merge(arr.splice(0, len))
+      // 这里递归调用merge 然后将merge返回的传入sort排序 
+      // 传入sort的是上一次merge的结果 而merge的结果又是对两个拆分数组的排序 所以每次sort排序的都是两个有序数组
+      return sort(leftArr, rightArr)
+    }
+    
+    function sort (leftArr, rightArr) {
+      let i = j = 0
+      let newArr = []
+      while (i < leftArr.length && j < rightArr.length) {
+        if (leftArr[i] > rightArr[j]) {
+          newArr.push(rightArr[j])
+          j++
+        } else {
+          newArr.push(leftArr[i])
+          i++
+        }
+      }
+      // 将剩余没排序的直接合并 因为剩余的是大于排序好的最后一项的
+      newArr = newArr.concat(leftArr.slice(i, leftArr.length))
+      newArr = newArr.concat(rightArr.slice(j, leftArr.length))
+      return newArr
+    }
+
+    console.log(merge(arr))
+  </script>
+</body>
+</html>
