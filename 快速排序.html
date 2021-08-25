@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<!--插入排序 -->
+时间复杂度 O(logn)
+空间复杂度 1
+
+<script>
+  const arr = [8, 6, 2, 5, 9, 4, 3, 1, 7]
+
+  function splitArr (arr, start, end) {
+    if (start > end) return arr
+
+    const baseIndex = Math.floor((start + end) / 2)
+    let i = start, j = end
+    while (i <= j) {
+      while (arr[i] < arr[baseIndex]) {
+        i++
+      }
+
+      while (arr[j] > arr[baseIndex]) {
+        j--
+      }
+
+      if (i <= j) {
+        let temp = arr[j]
+        arr[j] = arr[i]
+        arr[i] = temp
+        i++
+        j--
+      }
+    }
+    return i
+  }
+
+  function quickSort (arr, start = 0, end = arr.length - 1) {
+    
+    if (arr.length <= 1) {
+      return arr
+    }
+
+    const index = splitArr(arr, start, end)
+
+    if (start < index - 1) {
+      quickSort(arr, start, index - 1)
+    }
+    if (end > index) {
+      quickSort(arr, index, end)
+    }
+
+    return arr
+  }
+
+  console.log(quickSort(arr))
+</script>
+</body>
+</html>
