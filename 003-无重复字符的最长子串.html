@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+var lengthOfLongestSubstring = function(s) {
+  if (s && s.length === 1) return 1
+
+  let start = 0, i = 0, max = 0, l = s.length;
+  // 用map存储已经有的数据
+  const map = new Map()
+
+  while (i < l) {
+    // 先判断map中是否存在 并且该元素的上一次出现位置早于start
+    if (map.has(s[i]) && map.get(s[i]) >= start) {
+      // 如果当前元素重复 则将计算的头索引设置为重复元素的下一个
+      start = map.get(s[i]) + 1
+      map.set(s[i], i)
+    } else {
+      map.set(s[i], i)
+      max = Math.max(max, (i - start + 1))
+    }
+    i++
+  }
+  return max
+};
+
+
+console.log(lengthOfLongestSubstring("pwwkew"))
+// abcazbcbb
+// pwwkew
+// us
+// "abba"
+// "tmmzuxt"
+</script>
+</body>
+</html>
