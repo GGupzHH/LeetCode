@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var mySqrt = function(x) {
+    if (x === 0) return 0
+
+    if (x < 4) return 1
+    let start = 1
+    let end = x
+    let ans = Math.floor((start + end) / 2)
+    let square = ans * ans
+    
+    while (true) {
+      if (square === x) return ans
+
+      if (start + 1 === end) {
+        return start
+      } else if (square < x) {
+        start = ans
+      } else {
+        end = ans
+      }
+      ans = Math.floor((start + end) / 2)
+    }
+  };
+  console.log(mySqrt(4))
+</script>
+</body>
+</html>
