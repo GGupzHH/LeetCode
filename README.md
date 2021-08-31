@@ -10,6 +10,8 @@
 
 ### [069-x 的平方根](https://github.com/GGupzHH/LeetCode/blob/main/069-x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.html)
 
+### [070-爬楼梯](https://github.com/GGupzHH/LeetCode/blob/main/070-%E7%88%AC%E6%A5%BC%E6%A2%AF.html)
+
 ### [242-有效的字母异位词](https://github.com/GGupzHH/LeetCode/blob/main/242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html)
 
 ### [插入排序](https://github.com/GGupzHH/LeetCode/blob/main/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html)
