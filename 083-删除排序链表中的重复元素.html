@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  83. 删除排序链表中的重复元素
+  <script>
+    /**
+    * Definition for singly-linked list.
+    * function ListNode(val, next) {
+    *     this.val = (val===undefined ? 0 : val)
+    *     this.next = (next===undefined ? null : next)
+    * }
+    */
+    /**
+    * @param {ListNode} head
+    * @return {ListNode}
+    */
+
+    var deleteDuplicates = function(head) {
+      // return head
+      if (!head) return head
+      let current = head
+      let next = current.next
+      while(next){
+        if(current.val === next.val){
+          if (next.next) {
+            next = next.next
+          } else {
+            current.next = null
+            next = null
+          }
+        } else {
+          current.next = next
+          current = next
+          next = current.next
+        }
+      }
+      return head
+    };
+  </script>
+</body>
+</html>
