@@ -14,8 +14,6 @@
 
 ### [083-删除排序链表中的重复元素](https://github.com/GGupzHH/LeetCode/blob/main/083-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.html)
 
-### [100-相同的树](https://github.com/GGupzHH/LeetCode/blob/main/100-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.html)
-
 ### [242-有效的字母异位词](https://github.com/GGupzHH/LeetCode/blob/main/242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html)
 
 ### [插入排序](https://github.com/GGupzHH/LeetCode/blob/main/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html)
