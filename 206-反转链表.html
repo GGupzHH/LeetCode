@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+  <script>
+    /**
+    * @param {ListNode} head
+    * @return {ListNode}
+    */
+    var reverseList = function(head) {
+      if (!head) return head
+      let prev = null
+      let current = head
+      let next = current.next
+      while (current) {
+        current.next = prev
+        prev = current
+        current = next
+        if (!current) break
+        next = current.next
+      }
+      return prev
+    };
+  </script>
+</body>
+</html>
