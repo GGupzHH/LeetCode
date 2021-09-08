@@ -16,6 +16,8 @@
 
 ### [100-相同的树](https://github.com/GGupzHH/LeetCode/blob/main/100-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.html)
 
+### [125-验证回文串](https://github.com/GGupzHH/LeetCode/blob/main/125-%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B2.html)
+
 ### [206-反转链表](https://github.com/GGupzHH/LeetCode/blob/main/206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html)
 
 ### [242-有效的字母异位词](https://github.com/GGupzHH/LeetCode/blob/main/242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html)
