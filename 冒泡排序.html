@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+// 空间复杂度 因为在一个数组之内操作 两两交换  所以是 O(1)
+// 时间复杂度 
+// 特定已经排好序的 O(n)
+// 杂乱无章的O(n方)
+// 倒序(每次都需要对比排序)的O(n方)
+let arr = [1, 4, 6, 7, 2]
+
+function bubbleSort (arr) {
+  let change = true
+  for (let i = 0; i < arr.length - 1 && change; i++) {
+    change = false
+    for (let  j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        change = true
+        let curr = arr[j + 1]
+        arr[j + 1] = arr[j]
+        arr[j] = curr
+      }
+    }
+  }
+  return arr
+}
+
+bubbleSort(arr)
+
+
+</script>  
+</body>
+</html>
