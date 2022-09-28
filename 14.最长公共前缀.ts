@@ -2,6 +2,8 @@
  * @lc app=leetcode.cn id=14 lang=typescript
  *
  * [14] 最长公共前缀
+ * 
+ * 还有一种解法就是使用map，map去一次set，key是当前字符，value是个数，最后迭代map
  */
 
 // @lc code=start
