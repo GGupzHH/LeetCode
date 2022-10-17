@@ -6,22 +6,28 @@
 
 // @lc code=start
 function isHappy(n: number): boolean {
-  let sum = n;
-  const sets = new Set()
-  while (sum !== 1) { 
-    const singleList: Array<string> = (sum + '').split('')
-    sum = 0
-    for (let i = 0; i < singleList.length; i++) { 
-      let single: any = singleList[i]
-      sum += Math.pow((single - 0), 2)
+  const set = new Set()
+
+  const getSum = (n: number) => {
+    let sums = 0
+    while (n >= 1) { 
+      sums += Math.pow(n % 10, 2)
+      n = Math.trunc(n / 10)
     }
-    if (sets.has(sum)) {
+    if (sums === 1) {
+      return true
+    }
+    
+    if (set.has(sums)) { 
       return false
     }
-    sets.add(sum)
-    console.log(sum)
+    set.add(sums)
+    
+    return getSum(sums)
   }
-  return true
+  
+  
+  return getSum(n)
 };
 // @lc code=end
 
